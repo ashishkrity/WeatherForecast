@@ -1,0 +1,33 @@
+    <div class="container"> 
+        <h2 class="text-primary text-center my-4">Weather Forecast</h2>   
+            <div class="row my-3">
+                <div class="col-md-2 mx-2" *ngFor="let main of fiveDaysWeather">
+                   <div id="divWeatherMain"> 
+                       <div class="row">
+                           <div class="col-md-6">
+                            <div class="weatherWidgetRow">
+                                <i class="fas fa-3x fa-sun sun"></i>
+                            </div>   
+                           </div>
+                           <div class="col-md-6">
+                            <div class="weatherWidgetRow">
+                                <i class="fas fa-3x fa-cloud cloud"></i>
+                            </div>   
+                           </div>
+                       </div>
+                            <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;"> {{(main.temp-273.15).toFixed(0)}}&deg;C <span style="font-size:12px"></span> </div>
+                            <div class="weatherWidgetRow" style="font-size: 12px;margin-top: 5px;"> {{(main.temp_min-273.15).toFixed(0)}} / {{(main.temp_max-273.15).toFixed(0)}}</div>
+                            <div class="weatherWidgetRow" style="font-size: 25px; margin-top: 10px;">{{cityName}}</div> 
+                            <div class="weatherWidgetRow" style="font-size: 12px;margin-top: 5px;"> Humidity : {{main.humidity}}% </div>
+                        </div> 
+                    </div>   
+            </div>   
+                    <div class="row">
+                        <div class="col-md-2 mx-2 divWeatherDate" *ngFor="let date of tempbyDate">
+                            {{date.dt_txt}}
+                        </div>
+                    </div>    
+    </div>
+
+
+
